@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<header th:insert="/blocks/headerNotFilter :: head"></header>
+
+<body class="text-center"><div id="ext-megabonus-main-content" class="ext-megabonus-top-line"></div>
+<h1>Личный кабинет</h1>
+<main class="col-md-3 text-center container mx-auto">
+    <div class="py-5 text-center">
+    <form th:action="@{/users/profile}" th:object="${user}" method="post">
+        <div class="row g-3">
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="username" th:field="*{username}">
+                <label>Имя пользователя</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="email" class="form-control" name="email" th:field="*{email}">
+                <label>Email</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" name="password" th:field="*{password}">
+                <label>Пароль</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" name="password" th:field="*{matchingPassword}">
+                <label>Повторите пароль</label>
+            </div>
+        </div>
+        <hr class="my-4">
+        <button class="w-100 btn btn-lg btn-outline-danger" type="submit">Сохранить</button>
+    </form>
+    </div>
+</main>
+<footer th:insert="blocks/footer :: footer"></footer>
+<style type="text/css">
+    content {
+        width: 500px; /* Ширина слоя */
+        margin: 0 auto 50px; /* Выравнивание по центру */
+    }
+    footer {
+        position: fixed;
+        left: 0; bottom: 0; /* Левый нижний угол */
+        color: #fff; /* Цвет текста */
+        width: 100%; /* Ширина слоя */
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+
+</body>
+</html>

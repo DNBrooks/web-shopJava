@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <title>Столы и стулья</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+<header th:insert="/blocks/headerNotFilter :: head"></header>
+
+<main>
+    <div class="container text-center">
+        <h1>Столы и стулья</h1>
+    </div>
+
+    <div class="container marketing">
+
+        <hr class="featurette-divider">
+
+        <div class="row">
+            <div class="col-lg-4 text-center">
+                <a href="/table">
+                    <img th:src="@{../image/tableAndChair/Lando.png}" width="80%" height="80%" role="img" aria-label="Placeholder: 140x140">
+                    <rect width="100%" height="100%" fill="#777"></rect>
+                    <h2><a class="link-dark text-decoration-none" href="/table">Столы</a></h2>
+                </a>
+            </div><!-- /.col-lg-4 -->
+
+            <div class="col-lg-4 text-center">
+                <a href="/chair">
+                    <img th:src="@{../image/tableAndChair/Oval.png}" width="80%" height="80%" role="img" aria-label="Placeholder: 140x140">
+                    <rect width="100%" height="100%" fill="#777"></rect>
+                    <h2><a class="link-dark text-decoration-none" href="/chair">Стулья</a></h2>
+                </a>
+            </div><!-- /.col-lg-4 -->
+
+            <div class="col-lg-4 text-center">
+                <a href="/komplect">
+                    <img th:src="@{../image/komplect/Toskana.png}" width="80%" height="80%" role="img" aria-label="Placeholder: 140x140">
+                    <rect width="100%" height="100%" fill="#777"></rect>
+                    <h2><a class="link-dark text-decoration-none" href="/komplect">Комплекты</a></h2>
+                </a>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+    </div>
+</main>
+
+<footer th:insert="/blocks/footer :: foot"></footer>
+<style type="text/css">
+    content {
+        width: 500px; /* Ширина слоя */
+        margin: 0 auto 50px; /* Выравнивание по центру */
+    }
+    footer {
+        position: fixed; /* Фиксированное положение */
+        left: 0; bottom: 0; /* Левый нижний угол */
+        color: #fff; /* Цвет текста */
+        width: 100%; /* Ширина слоя */
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+
+</body>
+</html>

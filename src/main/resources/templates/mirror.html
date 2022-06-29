@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Зеркала</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+<header th:insert="/blocks/header :: head"></header>
+
+<main>
+    <section id="cards">
+        <div class="container">
+            <h1 class="text text-center">Зеркала</h1>
+        </div>
+    <div class="album">
+        <div class="container">
+
+            <hr class="featurette-divider">
+
+            <span class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-4">
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img  th:src="@{../image/mirror/Victoria.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p>Зеркало Виктория</p>
+                            <h6>Цена 8999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#victoria">Предпросмотр</button>
+                                   <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="victoria" tabindex="-1" aria-labelledby="victoria" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Зеркало Виктория
+                                        <h2 class="text-danger">Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Настенное зеркало "Виктория" из одноименной мебельной
+                                                        коллекции представляет собой весьма оригинальный элемент декора. Конструкция
+                                                        отличается от традиционных стандартов и сразу обращает на себя внимание.
+                                                        Зеркальное полотно по нижней и верхней кромкам – безрамочное, боковые же
+                                                        грани обрамлены планками из МДФ. Поверхность планок визуально напоминает
+                                                        собранную в «гармошку» ткань. </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 85 х 60 х 3,5 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, МДФ, зеркало</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Victoria.png}" width="100%" height="300" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Victoria2.png}" width="100%" height="300" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img  th:src="@{../image/mirror/Dorime.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p>Зеркало Дориме</p>
+                            <h6>Цена 10499 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#dorime">Предпросмотр</button>
+                                   <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="dorime" tabindex="-1" aria-labelledby="dorime" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Зеркало Дориме
+                                        <h2 class="text-danger">Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Зеркало "Дориме" позволит не зависеть от естественного
+                                                        освещения при нанесении ежедневного макияжа или уходе за лицом и волосами.
+                                                        По периметру рамы расположены 12 светодиодных ламп (приобретаются отдельно),
+                                                        обеспечивающих комфортную для зрения подсветку. Изделие оснащено шнуром со
+                                                        стандартной вилкой, на боковой части корпуса расположен клавишный выключатель.
+                                                    </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 60 х 80 х 5,5 см</p>
+                                                    <p class="lead">Материал изготовления - МДФ, зеркало</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel2" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Dorime.png}" width="100%" height="300" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Dorime2.png}" width="100%" height="300" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel2" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel2" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/mirror/Tree.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p>Зеркало Древо</p>
+                            <h6>Цена 8499 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#tree">Предпросмотр</button>
+                                   <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="tree" tabindex="-1" aria-labelledby="tree" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Зеркало Древо
+                                        <h2 class="text-danger">Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Декоративное зеркало "Древо" – элегантный и функциональный предмет
+                                                        интерьера. Оригинальная золотистая рама с зеркальными вставками делает
+                                                        его подходящим для комнат с любым дизайном – от классического до модерна. Она
+                                                        сделана из качественной пластмассы – прочной и устойчивой к перепадам температур,
+                                                        влажности и загрязнениям. Малый вес позволяет крепить зеркало на тонких стенах и перегородках.
+                                                    </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер -  88 х 65 х 2 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, зеркало</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel3" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel3" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel3" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Tree.png}" width="100%" height="300" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Tree2.png}" width="100%" height="300" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel3" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel3" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/mirror/Strong.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p class="card-text">Зеркало Стронг</p>
+                            <h6>Цена 4999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#strong">Предпросмотр</button>
+                                   <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="modal fade" id="strong" tabindex="-1" aria-labelledby="strong" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Зеркало Стронг
+                                        <h2 class="text-danger">Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Стильное настенное зеркало "Стронг" станет завершающим
+                                                        штрихом в оформлении интерьера гостиной или спальни. Оно визуально
+                                                        увеличит пространство и сделает помещение еще более светлым, воздушным.
+                                                        Абсолютно гладкая поверхность дает реалистичное изображение без искажений.
+                                                        Широкая рама со скошенными углами окрашена в цвет благородного античного серебра
+                                                        и дополнена зеркальными элементами по всему периметру.
+                                                    </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер -  56 х 64 х 2 см</p>
+                                                    <p class="lead">Материал изготовления - пластмасса, зеркало</p>
+                                                    <p class="lead">Гарантия - 6 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel4" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel4" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel4" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Strong.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Strong2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel4" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel4" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/mirror/Nord.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p class="card-text">Зеркало Норд</p>
+                            <h6>Цена 15949 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#nord">Предпросмотр</button>
+                                   <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="nord" tabindex="-1" aria-labelledby="nord" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Зеркало Норд
+                                        <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Панель с зеркалом "Норд" — стильное и практичное дополнение
+                                                        к интерьеру спальни или прихожей. Широкое зеркальное полотно с фаской надежно закреплено
+                                                        на основании цвета дуба. Панель "Норд" — универсальный предмет мебели и подойдет к
+                                                        большинству типов современных интерьеров. В дизайне модели нет ничего лишнего,
+                                                        никаких декоративных деталей, отвлекающих внимание от отражения и требующих соответствующего оформления помещения.
+                                                    </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер -  90 х 70 х 2 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, зеркало</p>
+                                                    <p class="lead">Гарантия - 6 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel5" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel5" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel5" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Nord.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Nord2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel5" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel5" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/mirror/Planta.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p class="card-text">Зеркало Планта</p>
+                            <h6>Цена 16799 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#planta">Предпросмотр</button>
+                                   <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="planta" tabindex="-1" aria-labelledby="planta" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Зеркало Планта
+                                        <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Зеркало "Планта" – неотъемлемая часть коллекции мебели для прихожих,
+                                                        оно закреплено на панели из ЛДСП, оснащенной также полкой для головных уборов.
+                                                        Светлый оттенок дуба в сочетании с отражающими свойствами зеркала способны
+                                                        визуально увеличить небольшую входную зону. Вертикальное расположение и размеры
+                                                        зеркального полотна позволяют человеку видеть себя в полный рост. Выполненный
+                                                        по краям фацет выглядит как изящная рама и придает аксессуару дополнительную выразительность.
+                                                    </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер -  40 х 110,3 х 25,6 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, зеркало</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel6" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel6" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel6" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Planta.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Planta2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel6" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel6" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/mirror/House.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p class="card-text">Зеркало Хаус</p>
+                            <h6>Цена 10699 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#house">Предпросмотр</button>
+                                   <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="house" tabindex="-1" aria-labelledby="house" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Зеркало Хаус
+                                        <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Трюмо "Хаус" — образец классического дизайна: без излишеств,
+                                                        но элегантного и стильного. Представленная модель оттенка светлого
+                                                        дуба будет хорошо смотреться в интерьере, выполненном в спокойных классических
+                                                        цветах. Несмотря на компактность, конструкция очень функциональна: поворотное
+                                                        зеркало позволяет рассмотреть свое изображение под любым углом. К трюмо
+                                                        можно приобрести дополнительные модули с ящиками для хранения аксессуаров.
+                                                    </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер -  58,6 х 61,4 х 13,4 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, зеркало</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel7" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel7" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel7" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/mirror/House.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/mirror/House2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel7" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel7" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/mirror/Zevs.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2019</h6>
+                            <p class="card-text">Зеркало Зевс</p>
+                            <h6>Цена 7999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#zevs">Предпросмотр</button>
+                                   <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="zevs" tabindex="-1" aria-labelledby="zevs" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Зеркало Зевс
+                                        <h2 class="text-danger">Коллекция 2019</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Зеркало "Зевс" — функциональное и элегантное дополнение прихожей,
+                                                        гостиной или спальни. Особенно хорошо изделие в серых тонах,с выраженной древесной
+                                                        текстурой будет смотреться в простом, элегантном интерьере. Модель позволит
+                                                        зрительно увеличить пространство небольшого помещения. Верх прямоугольной рамы
+                                                        декорирован рельефной вставкой. Выполненное из МДФ и ДСП зеркало выглядит эстетично,
+                                                        при этом не боится преждевременного износа и не требует сложного ухода.
+                                                    </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер -  100 х 63,4 х 8 см</p>
+                                                    <p class="lead">Материал изготовления - ДСП, МДФ, зеркало</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel8" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel8" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel8" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Zevs.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Zevs2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel8" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel8" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/mirror/Spiral.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2019</h6>
+                            <p class="card-text">Зеркало Спирал</p>
+                            <h6>Цена 12449 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#spiral">Предпросмотр</button>
+                                   <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="spiral" tabindex="-1" aria-labelledby="spiral" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Зеркало Зевс
+                                        <h2 class="text-danger">Коллекция 2019</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Декоративное зеркало "Спирал" может использоваться как по прямому
+                                                        назначению, так и в качестве настенного украшения. Отражая естественный или
+                                                        искусственный свет, аксессуар создает иллюзию большего пространства, что особенно
+                                                        актуально для прихожей или маленькой спальни. Сет состоит из двух круглых зеркальных
+                                                        элементов, соединенных перемычкой. Рамы простой геометрической формы выглядят эффектнее
+                                                        за счет окрашивания в золотой цвет.
+                                                    </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер -  23,5 х 55 х 5,5 см</p>
+                                                    <p class="lead">Материал изготовления - металл, зеркало</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel9" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel9" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel9" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Spiral.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/mirror/Spiral2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel9" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel9" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+            </span>
+
+            <hr class="featurette-divider">
+
+        </div>
+    </div>
+    </section>
+</main>
+
+<footer th:insert="/blocks/footer :: foot"></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        $("#search").keyup(function () {
+
+            var filter = $(this).val(),
+                count = 0;
+
+            $('#cards span').each(function () {
+
+                if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                    $(this).hide();
+
+                } else {
+                    $(this).show('');
+                    count++;
+                }
+            });
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Ковры</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+<header th:insert="/blocks/header :: head"></header>
+
+<main>
+    <section id="cards">
+        <div class="container">
+            <h1 class="text text-center">Ковры</h1>
+        </div>
+    <div class="album">
+        <div class="container">
+
+            <hr class="featurette-divider">
+
+            <span class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-4">
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img  th:src="@{../image/carped/Gali.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                        <div class="card-body">
+                            <h6 class="text-danger">НОВИНКА</h6>
+                            <p>Ковер Галилей</p>
+                            <h6>Цена 8999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#gali">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade " id="gali" tabindex="-1" aria-labelledby="gali" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Ковер Галилей
+                                            <h2 class="text-danger">НОВИНКА</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Однотонный ковер "Галилей" – напольное покрытие с ворсом, внешне
+                                                        напоминающим мягкий газон. Изделие выполнено из прочного полипропилена – легкого
+                                                        и неприхотливого в уходе материала. Полипропиленовое волокно отличается
+                                                        устойчивостью к большинству загрязнений и способностью сохранять безупречный
+                                                        внешний вид на протяжении всего срока использования. Не рекомендуется хранить и
+                                                        выбивать изделие в сложенном виде. Ковер станет прекрасным дополнением интерьера, выдержанного в современном стиле.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 160 х 230 см</p>
+                                                    <p class="lead">Материал изготовления - полипропилен</p>
+                                                    <p class="lead">Гарантия - 10 месяцев</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/carped/Gali.png}" width="100%" height="300"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/carped/Labirint.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6 class="text-danger">АКЦИЯ</h6>
+                            <p class="card-text">Ковер Лабиринтиан</p>
+                            <h6>Цена <s>8999 ₽</s>/4999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#labi">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade " id="labi" tabindex="-1" aria-labelledby="labi" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Ковер Лабиринтиан
+                                            <h2 class="text-danger">АКЦИЯ</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Ковер "Лабиринтиан" поможет создать в интерьере умиротворяющую,
+                                                        обволакивающую атмосферу. Мягкий плотный ворс и спокойное колористическое
+                                                        решение работают на релакс, обеспечивая тактильный и визуальный комфорт.
+                                                        Рисунок выдержан в современном стиле и представляет собой наложенные друг
+                                                        на друга концентрические круги разных оттенков.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 150 х 230 см</p>
+                                                    <p class="lead">Материал изготовления - полипропилен</p>
+                                                    <p class="lead">Гарантия - 10 месяцев</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/carped/Labirint.png}" width="100%" height="300"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/carped/Messi.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p>Ковер Месси</p>
+                            <h6>Цена 10249 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#messi">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade " id="messi" tabindex="-1" aria-labelledby="messi" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Ковер Месси
+                                            <h2 class="text-danger">Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Ковер "Месси" подойдет для комнаты, решенной в сдержанных
+                                                        природных тонах. В своей работе дизайнеры вдохновлялись неброской красотой
+                                                        северных лесов и болот. Разная высота ворса создает рельефную текстуру, которая
+                                                        напоминает растрескавшуюся кору старого дерева или землю, покрытую серо-коричневым
+                                                        мхом-лишайником. Искусственная потертость и приглушенные оттенки придают изделию
+                                                        винтажный вид. Полипропиленовое волокно устойчиво к истиранию и выцветанию, легко поддается чистке.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 80 х 150 см</p>
+                                                    <p class="lead">Материал изготовления - полипропилен</p>
+                                                    <p class="lead">Гарантия - 10 месяцев</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/carped/Messi.png}" width="100%" height="300"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/carped/Kosmo.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p>Ковер Космо</p>
+                            <h6>Цена 9899 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#kosmo">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade " id="kosmo" tabindex="-1" aria-labelledby="kosmo" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Ковер Космо
+                                            <h2 class="text-danger">Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Эффектный ковер полностью преобразит комнату. Прямоугольная модель
+                                                        объединит все предметы обстановки, придаст целостность дизайнерской концепции,
+                                                        позволит выделить отдельные зоны. Помимо впечатляющих внешних характеристик,
+                                                        такой ковер очень функционален. Он предотвращает истирание напольного покрытия,
+                                                        заглушает шум шагов, выступает прекрасным теплоизоляционным материалом.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 80 х 150 см</p>
+                                                    <p class="lead">Материал изготовления - полиэстер, джут</p>
+                                                    <p class="lead">Гарантия - 10 месяцев</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/carped/Kosmo.png}" width="100%" height="300"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/carped/Tria.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p>Ковер Трия</p>
+                            <h6>Цена 10949 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#tria">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade " id="tria" tabindex="-1" aria-labelledby="tria" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Ковер Трия
+                                            <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Ковер "Триа" сделает уютнее помещение, с его помощью можно зонировать
+                                                        пространство комнаты. Ковер выполнен в традиционной технике, имеет прямоугольную
+                                                        форму, по узкому срезу украшен бахромой. Изделие имеет низкий ворс (3 мм), выткано из
+                                                        смесовой пряжи вискозы и хлопка, придающей готовому ковру особую прочность и легкость.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 95 х 140 см</p>
+                                                    <p class="lead">Материал изготовления - вискоза, хлопок</p>
+                                                    <p class="lead">Гарантия - 10 месяцев</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/carped/Tria.png}" width="100%" height="300"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/carped/Platimum.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail">
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p>Ковер Платинум</p>
+                            <h6>Цена 12799 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#plat">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade " id="plat" tabindex="-1" aria-labelledby="plat" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Ковер Платинум
+                                            <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Ковер "Платинум" выполнен в лучших традициях этого индустриального
+                                                        стиля. Лаконичная прямоугольная форма, минималистичный дизайн и продуманная
+                                                        цветовая концепция – вот черты, которые превращают модель в стильный элемент декора.
+                                                        Благодаря мягкому ворсу, ковер, расположенный в зоне отдыха или сна, способен утеплить
+                                                        холодный пол и приглушить звук шагов, создавая необходимую для качественного релакса атмосферу.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 160 х 230 см</p>
+                                                    <p class="lead">Материал изготовления - полипропилен</p>
+                                                    <p class="lead">Гарантия - 10 месяцев</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/carped/Platimum.png}" width="100%" height="300"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/carped/Riva.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail">
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p>Ковер Рива</p>
+                            <h6>Цена 16099 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#riva">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade " id="riva" tabindex="-1" aria-labelledby="riva" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Ковер Рива
+                                            <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Ковер "Рива" внесет в интерьер разноцветье летнего сада. Узор
+                                                        напоминает рисунок, выполненный в акварельной технике, – по полю ковра
+                                                        разбросаны изображенные в крупном масштабе цветы: маки, васильки, вьюнки.
+                                                        Яркий аксессуар не только способен оказывать влияние на формирование эмоционального
+                                                        фона комнаты, но и поможет снизить уровень шума, устранить эффект эха.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 80 х 150 см</p>
+                                                    <p class="lead">Материал изготовления - полипропилен</p>
+                                                    <p class="lead">Гарантия - 10 месяцев</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/carped/Riva.png}" width="100%" height="300"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/carped/Cheggi.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2019</h6>
+                            <p>Ковер Шегги</p>
+                            <h6>Цена 8999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cheggi">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade " id="cheggi" tabindex="-1" aria-labelledby="cheggi" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Ковер Шегги
+                                            <h2 class="text-danger">Коллекция 2019</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Ковер "Шегги" сыграет значимую роль в оформлении пространства
+                                                        гостиной или спальни, придав интерьеру мягкость и камерность. Цветовое решение
+                                                        построено на оттенках нейтральной бежево-коричневой гаммы. Простой геометрический
+                                                        узор в виде наложенных друг на друга прямоугольников разных размеров выглядит
+                                                        импозантно за счет интересной фактуры ворса и использования меланжевой пряжи. </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 100 х 200 см</p>
+                                                    <p class="lead">Материал изготовления - полипропилен</p>
+                                                    <p class="lead">Гарантия - 10 месяцев</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/carped/Cheggi.png}" width="100%" height="300"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/carped/Genius.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2019</h6>
+                            <p>Ковер Гениус</p>
+                            <h6>Цена 19449 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#genius">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade " id="genius" tabindex="-1" aria-labelledby="genius" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Ковер Гениус
+                                            <h2 class="text-danger">Коллекция 2019</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Ковер "Гениус" не только помогает предохранить напольное покрытие
+                                                        от механических повреждений, но и представляет собой эффектный декоративный элемент.
+                                                        Темный цвет и интересный геометрический орнамент полностью соответствуют трендам
+                                                        интерьеров, выполненных в классическом стиле. Джут и полипропилен в составе изделия
+                                                        обеспечивают его гипоаллергенность и устойчивость к воздействию влаги. Чистка такого
+                                                        ковра не займет много времени, от пыли и грязи его легко избавить с помощью пылесоса.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 80 х 150 см</p>
+                                                    <p class="lead">Материал изготовления - полипропилен</p>
+                                                    <p class="lead">Гарантия - 10 месяцев</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/carped/Genius.png}" width="100%" height="300"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+            </span>
+
+            <hr class="featurette-divider">
+
+        </div>
+    </div>
+    </section>
+</main>
+
+<footer th:insert="/blocks/footer :: foot"></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript">
+    window.onload = function () {
+        $("#search").keyup(function () {
+
+            var filter = $(this).val(),
+                count = 0;
+
+            $('#cards span').each(function () {
+
+                if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                    $(this).hide();
+
+                } else {
+                    $(this).show('');
+                    count++;
+                }
+            });
+        });
+    }
+</script>
+</body>
+</html>

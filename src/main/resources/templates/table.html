@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Столы</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+<header th:insert="/blocks/header :: head"></header>
+
+<main>
+    <section id="cards">
+        <div class="container">
+            <h1 class="text text-center">Столы</h1>
+        </div>
+        <div class="album">
+            <div class="container">
+
+                <hr class="featurette-divider">
+
+                <span class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-4">
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img  th:src="@{../image/tableAndChair/Vals.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                        <div class="card-body">
+                            <h6 class="text-danger">НОВИНКА</h6>
+                            <p>Стол Валс</p>
+                            <h6>Цена 15999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#vals">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="vals" tabindex="-1" aria-labelledby="vals" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Стол Валс
+                                        <h2 class="text-danger">НОВИНКА</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Стол "Валс" выполнен в современном стиле лофт.
+                                                        Уникальность дизайнерского решения заключается в сочетании двух
+                                                        самостоятельных журнальных столиков разной высоты и с разными размерами
+                                                        столешниц. Благодаря такому приему вы можете преображать интерьер, меняя положение столиков.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 860x750x450 мм; 690x600x250 мм</p>
+                                                    <p class="lead">Материал изготовления - МДФ, массив</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/tableAndChair/Vals.png}" width="100%" height="100%" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/tableAndChair/Vals2.png}" width="100%" height="100%" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class=" card shadow-sm">
+                        <img class="container" th:src="@{../image/tableAndChair/Vilmer.png}" width="225" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                        <div class="card-body">
+                            <h6 class="text-danger">НОВИНКА</h6>
+                            <p>Стол Вилмер</p>
+                            <h6>Цена 14999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#ingo">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="ingo" tabindex="-1" aria-labelledby="ingo" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Стол Вилмер
+                                            <h2 class="text-danger">НОВИНКА</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Раздвижной обеденный стол "Вилмер" – практичное решение для
+                                                        тех, кто любит приглашать гостей и устраивать семейные ужины. В сложенном
+                                                        состоянии его хватает для повседневного использования семьей из 2-4 человек.
+                                                        Разложив столешницу, можно получить дополнительные посадочные места, а также
+                                                        возможность для одновременной подачи большего числа блюд. Модель имеет массивную,
+                                                        основательную столешницу и устойчивое подстолье.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 110(150) х 74 х 68,6 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП</p>
+                                                    <p class="lead">Гарантия - 10 месяцев</p>
+                                                </div>
+                                                <div id="myCarousel2" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/tableAndChair/Vilmer.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/tableAndChair/Vilmer2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel2" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel2" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/tableAndChair/Oberon.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6 class="text-danger">АКЦИЯ</h6>
+                            <p class="card-text">Стол Оберон</p>
+                            <h6>Цена <s>11899 ₽</s>/10749 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#oberon">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="oberon" tabindex="-1" aria-labelledby="oberon" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Стол Оберон
+                                            <h2 class="text-danger">АКЦИЯ</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7 ">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Металлическое основание кухонного стола - это, прежде
+                                                        всего, практичность: оно прочное и долговечное, за ним легко ухаживать,
+                                                        а его внешний вид даже через многие годы останется неизменным. Не
+                                                        последнюю роль играет и эстетика. Каркас из металла прекрасно сочетается
+                                                        с любым материалом столешницы, вписывается в любое стилистическое решение.
+                                                        Блеск металлических деталей придает кухне современный и респектабельный вид.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 1400(1800)х700х900 мм</p>
+                                                    <p class="lead">Материал изготовления - МДФ, металл</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+                                                </div>
+                                                <div id="myCarousel3" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel3" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel3" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Oberon.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start ">
+                                                            <img th:src="@{../image/tableAndChair/Oberon2.png}" width="100%" height="500" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel3" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel3" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/tableAndChair/Lando.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6 class="text-danger">АКЦИЯ</h6>
+                            <p class="card-text">Стол Ландо</p>
+                            <h6>Цена <s>9799 ₽</s>/7499 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#lando">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="lando" tabindex="-1" aria-labelledby="lando" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Стол Ландо
+                                            <h2 class="text-danger">АКЦИЯ</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Металлическое основание кухонного стола - это, прежде
+                                                        всего, практичность: оно прочное и долговечное, за ним легко ухаживать,
+                                                        а его внешний вид даже через многие годы останется неизменным. Идеальное
+                                                        сочетание высоких эстетических и эксплуатационных качеств — вот главное
+                                                        преимущество стеклянной столешницы. Для нее характерны современный дизайн, исключительная прочность и долговечность. </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 1300х700х800 мм</p>
+                                                    <p class="lead">Материал изготовления - МДФ, металл, зеркальное стекло</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+
+                                                </div>
+                                                <div id="myCarousel4" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel4" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel4" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Lando.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Lando2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel4" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel4" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/tableAndChair/Solomon.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p class="card-text">Стол Соломон</p>
+                            <h6>Цена 24949 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#solomon">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="solomon" tabindex="-1" aria-labelledby="solomon" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Стол Соломон
+                                        <h2 class="text-danger"> Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Идеальное сочетание высоких эстетических и эксплуатационных качеств
+                                                        — вот главное преимущество стеклянной столешницы. Для нее характерны
+                                                        современный дизайн, исключительная прочность и долговечность. Стекло
+                                                        не требует сложного ухода, легко очищается от любых загрязнений, при
+                                                        бережном использовании сохраняет первоначальный вид и служит гораздо дольше любых других материалов. </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 1400(1800)х700х900 мм</p>
+                                                    <p class="lead">Материал изготовления - МДФ, нержавеющая сталь, закаленное стекло</p>
+                                                    <p class="lead">Гарантия - 18 месяцев</p>
+                                                    </div>
+                                                <div id="myCarousel5" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel5" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel5" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Solomon.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Solomon2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel5" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel5" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/tableAndChair/Ontario.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p class="card-text">Стол Онтарио</p>
+                            <h6>Цена 19999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#ontario">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="ontario" tabindex="-1" aria-labelledby="ontario" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Стол Онтарио
+                                            <h2 class="text-danger"> Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Особенность модели – перекрещенные опоры из хромированного
+                                                        металла, создающие ощущение, что стол застыл в энергичном танцевальном па.
+                                                        Визуальный контраст создается за счет использования фактуры бетона и
+                                                        глянцевого покрытия подстолья. Благодаря раздвижному механизму круглая
+                                                        столешница легко трансформируется в овальную, увеличиваясь в длину на 35 см.
+                                                        Регулируемые подпятники помогут задать изделию устойчивое положение.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 1000(1350)х750х1000 мм</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, металл</p>
+                                                    <p class="lead">Гарантия - 18 месяцев</p>
+                                                </div>
+                                                <div id="myCarousel6" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel6" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel6" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Ontario.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Ontario2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel6" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel6" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/tableAndChair/Promo.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p class="card-text">Стол Промо</p>
+                            <h6>Цена 9499 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#long">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="long" tabindex="-1" aria-labelledby="long" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Стол Промо
+                                            <h2 class="text-danger"> Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Раздвижной стол "Промо" — отличный выбор для тех, кто
+                                                        вынужден экономить место в квартире или просто не любит загромождать
+                                                        пространство крупной мебелью. Модель сочетает в себе элегантность,
+                                                        лаконичность и функциональность. Четкие прямые линии, приятная неброская
+                                                        расцветка, простой и надежный механизм трансформации — все это делает стол
+                                                        "Промо" практичным приобретением на каждый день и для званых ужинов.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 110(209) х 75 х 67 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+                                                </div>
+                                                <div id="myCarousel7" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel7" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel7" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Promo.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Promo2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel7" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel7" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/tableAndChair/Rif.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p class="card-text">Стол Риф</p>
+                            <h6>Цена 17999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#saloon">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="saloon" tabindex="-1" aria-labelledby="saloon" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Стол Риф
+                                            <h2 class="text-danger"> Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Стильный, надежный и функциональный раздвижной стол "Риф"
+                                                        гармонично впишется в интерьер любой современной кухни или столовой
+                                                        и позволит рационально распорядиться площадью помещения. Благодаря
+                                                        удобному механизму трансформации стол легко раскладывается для приема
+                                                        гостей и так же без усилий складывается обратно, чтобы стать местом
+                                                        традиционного семейного обеда. </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 120(159) х 75 х 80 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, металл</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+                                                </div>
+                                                <div id="myCarousel8" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel8" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel8" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Rif.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Rif2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel8" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel8" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/tableAndChair/London.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2018</h6>
+                            <p class="card-text">Стул Овало</p>
+                            <h6>Цена 8449 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#oval">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="oval" tabindex="-1" aria-labelledby="oval" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Стул Овало
+                                            <h2 class="text-danger"> Коллекция 2018</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7 ">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Раздвижной стол "Лондон" отличается оптимальными пропорциями:
+                                                        он компактен и обедающей семье будет за ним уютно, но и в случае прихода
+                                                        гостей места хватит всем. Массивная нога-опора базируется на прочном основании,
+                                                        устойчивом за счет большой площади. Модель выполнена в теплом древесном декоре,
+                                                        убедительно имитирующем природный рисунок древесины дуба. </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 140(175) х 76 х 85 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, ДСП, МДФ</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+                                                </div>
+                                                <div id="myCarousel9" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel9" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel9" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/London.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/London2.png}" width="450" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel9" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel9" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/tableAndChair/Sam.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2018</h6>
+                            <p class="card-text">Стол Сэм</p>
+                            <h6>Цена 18449 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#sam">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="sam" tabindex="-1" aria-labelledby="sam" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Стол Сэм
+                                            <h2 class="text-danger"> Коллекция 2018</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7 ">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Стол-книжка, выполненный в интересном цветовом решении, — отличный
+                                                        вариант для обустройства интерьера кухни или небольшой гостиной. Корпус и
+                                                        столешница стола изготовлены из ламинированной ДСП. Металлические ножки с хромовым
+                                                        нержавеющим покрытием и закругленные углы столешницы придают изделию эстетичный вид.
+                                                        Удобство использования обеспечивают полочка в средней части корпуса,
+                                                        которая одновременно служит ребром жесткости.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 30(166,1) х 74 х 83 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, металл</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+                                                </div>
+                                                <div id="myCarousel10" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel10" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel10" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Sam.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Sam2.png}" width="450" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel10" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel10" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/tableAndChair/Neapol.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2018</h6>
+                            <p class="card-text">Стол Неаполь</p>
+                            <h6>Цена 20599 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#neapol">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="neapol" tabindex="-1" aria-labelledby="neapol" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Стол Неаполь
+                                            <h2 class="text-danger"> Коллекция 2018</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7 ">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Стол "Неаполь" выполнен в элегантном, изящном, классическом
+                                                        стиле, который превосходно подчеркнёт интерьер комнаты и станет главным
+                                                        элементом, привлекающим внимание своим безупречным исполнением. Столешница
+                                                        стола изготовлена из прочного закалённого стекла, устойчива к перепадам
+                                                        температур и воздействию повышенной влажности. Ножки из металла добавляют
+                                                        изящности в дизайн, а также гарантируют прочность, устойчивость и
+                                                        практичность изделия.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 110(141,5) х 75 х 70 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, металл, стекло</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+                                                </div>
+                                                <div id="myCarousel11" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel11" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel11" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Neapol.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Neapol2.png}" width="450" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel11" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel11" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                     <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/tableAndChair/Vancuv.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2018</h6>
+                            <p class="card-text">Стол Ванкувер</p>
+                            <h6>Цена 20599 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#vancuv">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="vancuv" tabindex="-1" aria-labelledby="neapol" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Стол Ванкувер
+                                            <h2 class="text-danger"> Коллекция 2018</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7 ">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Стол "Ванкувер" позволит обустроить уютную обеденную
+                                                        зону на кухне или в столовой – с прицелом на возможное добавление двух-трех
+                                                        персон. Для того, чтобы усадить пришедших гостей, достаточно раздвинуть
+                                                        половины столешницы и заполнить место в образовавшемся промежутке специальной
+                                                        вставкой. Опорами служат две разноразмерные колонны, соединяющие центр подстолья и основание.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 110(141,5) х 75 х 70 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, закаленное стекло</p>
+                                                    <p class="lead">Гарантия - 12 месяцев</p>
+                                                </div>
+                                                <div id="myCarousel12" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel12" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel12" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Vancuv.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start mt-5">
+                                                            <img th:src="@{../image/tableAndChair/Vancuv2.png}" width="450" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel12" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel12" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+            </span>
+
+                <hr class="featurette-divider">
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer th:insert="/blocks/footer :: foot"></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="scriptFilter.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        $("#search").keyup(function () {
+
+            var filter = $(this).val(),
+                count = 0;
+
+            $('#cards span').each(function () {
+
+                if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                    $(this).hide();
+
+                } else {
+                    $(this).show('');
+                    count++;
+                }
+            });
+        });
+    }
+</script>
+</body>
+</html>

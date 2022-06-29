@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Картины</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+<header th:insert="/blocks/header :: head"></header>
+
+<main>
+    <section id="cards">
+        <div class="container">
+            <h1 class="text text-center">Картины</h1>
+        </div>
+    <div class="album">
+        <div class="container">
+
+            <hr class="featurette-divider">
+
+            <span class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-4">
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img  th:src="@{../image/painting/Jir.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                        <div class="card-body">
+                            <h6 class="text-danger">НОВИНКА</h6>
+                            <p>Картина Енот</p>
+                            <h6>Цена 999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#jir">Предпросмотр</button>
+                                     <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="jir" tabindex="-1" aria-labelledby="jir" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Картина Енот
+                                            <h2 class="text-danger">НОВИНКА</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Холст на подрамнике оживит и преобразит современный интерьер.
+                                                        Изображения животных подходят для помещений любого назначения: гостиных,
+                                                        холлов, прихожих, очень нравятся детям и подросткам. Холст обладает идеальной
+                                                        фактурой, без узелков и неровностей. Высокое качество печати обеспечивает
+                                                        яркость и четкость изображения. За счет специальной обработки поверхность
+                                                        изделия отталкивает пыль и загрязнения.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 40 x 40 см</p>
+                                                    <p class="lead">Гарантия - 1 месяц</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/painting/Jir.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img  th:src="@{../image/painting/Venecia.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p>Картина Королевская прогулка</p>
+                            <h6>Цена 499 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#vene">Предпросмотр</button>
+                                     <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="vene" tabindex="-1" aria-labelledby="vene" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Картина Королевская прогулка
+                                            <h2 class="text-danger">Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Репродукция в раме — качественный принт произведения живописи
+                                                        с узнаваемым городским пейзажем. Уютный уголок Европы, место, в котором,
+                                                        приятно было бы очутиться и провести некоторое время, запечатленный на
+                                                        полотне, украсит интерьер квартиры или офиса и, возможно, вдохновит на
+                                                        путешествия или романтическую встречу. Современная печать передает все
+                                                        нюансы цвета, переходы оттенков, структуру поверхности.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 30 x 80 см</p>
+                                                    <p class="lead">Гарантия - 1 месяц</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/painting/Venecia.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/painting/Elephant.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p>Картина Слоники</p>
+                            <h6>Цена 1249 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#slon">Предпросмотр</button>
+                                     <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="slon" tabindex="-1" aria-labelledby="slon" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Картина Слоники
+                                            <h2 class="text-danger">Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Холст на подрамнике оживит и преобразит современный интерьер.
+                                                        Изображения животных подходят для помещений любого назначения: гостиных,
+                                                        холлов, прихожих, очень нравятся детям и подросткам. Холст обладает
+                                                        идеальной фактурой, без узелков и неровностей. Высокое качество печати
+                                                        обеспечивает яркость и четкость изображения. За счет специальной
+                                                        обработки поверхность изделия отталкивает пыль и загрязнения.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 45 x 80 см</p>
+                                                    <p class="lead">Гарантия - 1 месяц</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/painting/Elephant.png}" width="100%" height="300"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img  th:src="@{../image/painting/London.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p>Картина Пристань Сан-Марко</p>
+                            <h6>Цена 499 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#pris">Предпросмотр</button>
+                                     <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="pris" tabindex="-1" aria-labelledby="pris" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Картина Пристань Сан-Марко
+                                            <h2 class="text-danger">Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Репродукция с городским пейзажем — модный и стильный элемент
+                                                        декора интерьера. Невероятно живая, выразительная картина британского художника
+                                                        Ричарда Макнейла притягивает взгляд, погружая зрителя в романтичную атмосферу
+                                                        осеннего города. Старинные фонари, величественные здания, умытая дождем
+                                                        мостовая и, конечно, фигуры людей кажутся удивительно реалистичными.
+                                                        Изображение нанесено методом цифровой печати.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 30 x 80 см</p>
+                                                    <p class="lead">Гарантия - 1 месяц</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/painting/London.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/painting/Sea.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p>Картина Лес</p>
+                            <h6>Цена 949 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#les">Предпросмотр</button>
+                                     <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="les" tabindex="-1" aria-labelledby="les" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Картина Лес
+                                            <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Большая красочная картина похожа на окно в другой мир. Репродукция
+                                                        станет ярким штрихом любого интерьера, наиболее эффектно будет смотреться
+                                                        на однотонной стене. Пейзаж выполнен на МДФ с покрытием из глянцевой фотобумаги.
+                                                         Стойкое, не тускнеющее со временем изображение нанесено методом фотопечати.
+                                                        Тонкая черно-белая рамка придает картине завешенный вид.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 30 x 90 см</p>
+                                                    <p class="lead">Гарантия - 1 месяц</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/painting/Sea.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/painting/Paris.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p>Картина Париж</p>
+                            <h6>Цена 2799 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#paris">Предпросмотр</button>
+                                     <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="paris" tabindex="-1" aria-labelledby="paris" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Картина Париж
+                                            <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Холст на подрамнике с изображением известного европейского
+                                                        города — простой и доступный способ привнести в интерьер индивидуальность.
+                                                        Городской пейзаж визуально расширяет помещение, делает его атмосферным,
+                                                        наполняет духом уютных городских улочек. Изображение яркое и четкое, долго
+                                                        сохраняет первоначальный внешний вид. Поверхность постера обладает антистатическим
+                                                        эффектом, не притягивает пыль и не впитывает загрязнения.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 60 x 80 см</p>
+                                                    <p class="lead">Гарантия - 1 месяц</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/painting/Paris.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/painting/City.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p>Картина Город</p>
+                            <h6>Цена 1099 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#city">Предпросмотр</button>
+                                     <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="city" tabindex="-1" aria-labelledby="city" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Картина Город
+                                            <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Большая красочная картина похожа на окно в другой мир. Репродукция
+                                                        станет ярким штрихом любого интерьера, наиболее эффектно будет смотреться
+                                                        на однотонной стене. Пейзаж выполнен на МДФ с покрытием из глянцевой фотобумаги.
+                                                        Стойкое, не тускнеющее со временем изображение нанесено методом фотопечати.
+                                                        Тонкая черно-белая рамка придает картине завешенный вид.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 60 x 80 см</p>
+                                                    <p class="lead">Гарантия - 1 месяц</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/painting/City.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/painting/Flower.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2019</h6>
+                            <p>Картина Цветы в вазе</p>
+                            <h6>Цена 999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#flower">Предпросмотр</button>
+                                     <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="flower" tabindex="-1" aria-labelledby="flower" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Картина Цветы в вазе
+                                            <h2 class="text-danger">Коллекция 2019</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Каждый интерьер нуждается в эффектном акценте – с этой
+                                                        ролью легко справится репродукция "Цветы в вазе". Для натюрморта характерна тонкая
+                                                        колористика, детальная ручная проработка и мягкая, уютная атмосфера. Рельеф
+                                                        и объемность картине придает необычная техника исполнения: традиционная живопись
+                                                        на холсте дополнена изготовленными из алюминия стеблями и стилизованными чашечками
+                                                        цветов. Серебристый багет из пластика с тыльной стороны укреплен деревянными планками и уголками.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 60 x 80 см</p>
+                                                    <p class="lead">Гарантия - 1 месяц</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/painting/Flower.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/painting/Zebra.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2019</h6>
+                            <p>Картина Зебры</p>
+                            <h6>Цена 1449 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#zebra">Предпросмотр</button>
+                                     <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="zebra" tabindex="-1" aria-labelledby="zebra" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Картина Зебры
+                                            <h2 class="text-danger">Коллекция 2019</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                       <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Большая красочная картина похожа на окно в другой мир. Репродукция
+                                                        станет ярким штрихом любого интерьера, наиболее эффектно будет смотреться
+                                                        на однотонной стене. Пейзаж выполнен на МДФ с покрытием из глянцевой фотобумаги.
+                                                         Стойкое, не тускнеющее со временем изображение нанесено методом фотопечати.
+                                                        Тонкая черно-белая рамка придает картине завешенный вид.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 30 x 90 см</p>
+                                                    <p class="lead">Гарантия - 1 месяц</p>
+                                                </div>
+                                                <div class=" col-md-5">
+                                                    <img  th:src="@{../image/painting/Zebra.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+            </span>
+
+            <hr class="featurette-divider">
+
+        </div>
+    </div>
+    </section>
+</main>
+
+<footer th:insert="/blocks/footer :: foot"></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="scriptFilter.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        $("#search").keyup(function () {
+
+            var filter = $(this).val(),
+                count = 0;
+
+            $('#cards span').each(function () {
+
+                if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                    $(this).hide();
+
+                } else {
+                    $(this).show('');
+                    count++;
+                }
+            });
+        });
+    }
+</script>
+</body>
+</html>

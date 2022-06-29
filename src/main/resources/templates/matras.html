@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Матрасы</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+<header th:insert="/blocks/header :: head"></header>
+
+<main>
+    <section id="cards">
+        <div class="container">
+            <h1 class="text text-center">Матрасы</h1>
+        </div>
+    <div class="album">
+        <div class="container">
+
+            <hr class="featurette-divider">
+
+            <span class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-4">
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/matras/Pion.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6 class="text-danger">АКЦИЯ</h6>
+                            <p class="card-text">Матрас Пион</p>
+                            <h6>Цена <s>11999 ₽</s>/10999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#pion">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="pion" tabindex="-1" aria-labelledby="pion" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Матрас Пион
+                                            <h2 class="text-danger">АКЦИЯ</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">"Пион" - беспружинный матрас повышенной жесткости,
+                                                        обеспечивающий надежную поддержку Вашему позвоночнику. Высота
+                                                        матраса составляет 15,5 см. В качестве основы выступает монолитный
+                                                        блок высокоэластичной пены повышенной жесткости. Матрас не содержит
+                                                        металлических деталей, оказывающих на организм магнитное и электростатическое
+                                                        действие. Чехол матраса выполнен из хлопкового жаккарда, а это означает,
+                                                        что матрас, состоящий из 100% безопасной пены и хлопкового чехла,
+                                                        идеально подходит детям и людям, страдающим от аллергии.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 90 х 15 х 200 см</p>
+                                                    <p class="lead">Высота - 15,5 см</p>
+                                                    <p class="lead">Наполнитель - ППУ</p>
+                                                    <p class="lead">Гарантия - 18 месяцев</p>
+                                                </div>
+                                                <div id="myCarousel" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/matras/Pion.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/matras/Pion2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img  th:src="@{../image/matras/Reston.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p class="card-text">Матрас Рестон</p>
+                            <h6>Цена 24499 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#reston">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="reston" tabindex="-1" aria-labelledby="reston" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Матрас Рестон
+                                            <h2 class="text-danger">Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Матрас "Рестон" с дополнительной системой комфортности
+                                                        заботится о вас во время отдыха и позволяет получить истинное удовольствие
+                                                        от сна. Благодаря сочетанию эксклюзивной конструкции и усиленного
+                                                        пружинного блока матрас обладает множеством чутких точек опоры, предвосхищающих
+                                                        и направляющих любое движение человека, снимая напряжение и восстанавливая
+                                                        силы. Эксклюзивный чехол из хлопкового трикотажа и высокообъемного
+                                                        гипоаллергенного волокна, простеганный уникальной точечной стежкой,
+                                                        доставит не только эстетическое наслаждение, но и сохранит спокойствие
+                                                        вашего сна. Матрас дополнен дополнительной системой комфорта.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 180 х 29 х 200 см</p>
+                                                    <p class="lead">Высота - 29 см</p>
+                                                    <p class="lead">Наполнитель - пена, би-кокос, термовойлок, пружинный блок</p>
+                                                    <p class="lead">Гарантия - 18 месяцев</p>
+
+
+                                                </div>
+                                                <div id="myCarousel2" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/matras/Reston.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/matras/Reston2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel2" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel2" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/matras/Doris.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p class="card-text">Матрас Дорис</p>
+                            <h6>Цена 28999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#doris">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="doris" tabindex="-1" aria-labelledby="doris" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Матрас Дорис
+                                            <h2 class="text-danger">Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Двусторонний матрас с независимым пружинным блоком. Каждая
+                                                        пружина блока помещена в специальный чехол, поэтому они не соприкасаются
+                                                        между собой и не скрипят. В отличие от зависимых блоков, нагрузка в
+                                                        независимом пружинном блоке распределяется точечно, только по местам
+                                                        давления. Количество пружин – 256 штук на 1 кв.м. Независимый пружинный
+                                                        блок минимизирует колебания матраса, когда один из спящих ворочается.
+                                                        Верхний слой анатомической пены обеспечивает максимальный комфорт и
+                                                        расслабление. Борт матраса усилен широким коробом из плотной ортопены.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 90 х 21 х 190 см</p>
+                                                    <p class="lead">Высота - 21 см</p>
+                                                    <p class="lead">Наполнитель - трикотаж стёганый на синтепоне, пена повышенной плотности, термовойлок</p>
+                                                    <p class="lead">Гарантия - 18 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel3" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel3" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel3" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/matras/Doris.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/matras/Doris2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel3" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel3" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/matras/Mildex.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p class="card-text">Матрас Милдекс</p>
+                            <h6>Цена 20799 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#mildex">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="mildex" tabindex="-1" aria-labelledby="mildex" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Матрас Милдекс
+                                            <h2 class="text-danger">Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Двусторонний матрас "Милдекс" с разной жесткостью сторон.
+                                                        В основе матраса лежит независимый блок c плотностью 800 пружин
+                                                        на спальное место, обладающий анатомическим эффектом. Усиленный блок
+                                                        пружин обеспечивает оптимальную поддержку тела во время сна. Слой Би-Кокоса
+                                                        обеспечивает необходимую жесткость спального места. Вместе с тем
+                                                        всегда остается возможность использовать более мягкую сторону с материалом
+                                                        Bi-Foam. Пена Bi-Foam - это пена повышенной плотности, обладающая высоким
+                                                        уровнем комфорта и долговечности. Чехол матраса изготовлен из мягкого трикотажа с пропиткой антистресс.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 90 х 21 х 190 см</p>
+                                                    <p class="lead">Высота - 21 см</p>
+                                                    <p class="lead">Наполнитель - трикотаж стёганый, велюр би-фоам, термовойлок, независимый пружинный блок, би-кокос</p>
+                                                    <p class="lead">Гарантия - 18 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel4" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel4" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel4" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/matras/Mildex.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/matras/Mildex2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel4" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel4" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/matras/Nancy.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p class="card-text">Матрас Нэнси</p>
+                            <h6>Цена 17499 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#nancy">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="nancy" tabindex="-1" aria-labelledby="nancy" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Матрас Нэнси
+                                            <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Ортопедический матрас с разной жесткостью сторон рекомендован
+                                                        при наличии таких заболеваний, как радикулит, сколиоз 1-й стадии,
+                                                        межпозвоночная грыжа. В зависимости от самочувствия можно менять уровень
+                                                        жесткости, просто перевернув матрас. С каждой из сторон — различные комбинации
+                                                        кокосовой койры и латекса, натуральных наполнителей, отличающихся высокой
+                                                        эластичностью и воздухопроницаемостью. Блок независимых пружин с
+                                                        зональным распределением нагрузки гарантирует надежную поддержку и качественный отдых.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 80 х 27 х 194 см</p>
+                                                    <p class="lead">Высота - 27 см</p>
+                                                    <p class="lead">Наполнитель - трикотаж стёганый на синтепоне, латекс, кокос, независимый пружинный блок </p>
+                                                    <p class="lead">Гарантия - 18 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel5" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel5" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel5" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/matras/Nancy.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/matras/Nancy2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel5" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel5" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/matras/Concord.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p class="card-text">Матрас Консорт</p>
+                            <h6>Цена 22649 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#concord">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="concord" tabindex="-1" aria-labelledby="concord" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Матрас Консорт
+                                            <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Разная жесткость сторон позволяет менять условия для сна:
+                                                        выберите универсальную среднюю или более мягкую с инновационным эффектом
+                                                        «памяти», всего лишь перевернув матрас. Дополнительный комфорт поверхности
+                                                        придает пышный рельефный чехол, простеганный на объемном волокне и упругой
+                                                        пене. За поддержку отвечает независимый пружинный блок, в котором на
+                                                        одно спальное место приходится 1000 пружин. Каждая из них подстраивается
+                                                        под свой участок тела, гарантируя надежную опору для позвоночника и расслабление мышц. </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 140 х 24 х 200 см</p>
+                                                    <p class="lead">Высота - 24 см</p>
+                                                    <p class="lead">Наполнитель - ППУ, спанбонд, независимый пружинный блок, спанбонд, натуральный кокос</p>
+                                                    <p class="lead">Гарантия - 18 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel6" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel6" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel6" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/matras/Concord.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/matras/Concord2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel6" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel6" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/matras/Maestro.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p class="card-text">Матрас Маэстро</p>
+                            <h6>Цена 25999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#maestro">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="maestro" tabindex="-1" aria-labelledby="maestro" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Матрас Маэстро
+                                            <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead"> Матрас "Маэстро" –это стильный, современный, созданный
+                                                        по последнему слову технологий односторонний матрас, предназначенный для людей,
+                                                        ведущих активный образ жизни. Благодаря уникальной пружинной системе с
+                                                        двойной поддержкой матрас снимает напряжение после усиленных нагрузок и
+                                                        помогает полностью расслабиться. Идеально повторяет изгибы тела,
+                                                        предотвращает дискомфорт в области позвоночника. Роскошная перина,
+                                                        которая позволяет моментально расслабиться и уснуть. </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 90 х 36 х 200 см</p>
+                                                    <p class="lead">Высота - 36 см</p>
+                                                    <p class="lead">Наполнитель - велюр стёганый на пене, натуральный лён, пружинный блок DoubleTouch, двойной слой Eco-Latex</p>
+                                                    <p class="lead">Гарантия - 18 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel7" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel7" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel7" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/matras/Maestro.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/matras/Maestro2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel7" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel7" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/matras/Medium.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p class="card-text">Матрас Медиум</p>
+                            <h6>Цена 22849 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#medium">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="medium" tabindex="-1" aria-labelledby="medium" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Матрас Медиум
+                                            <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead"> Кокосовое волокно, входящее в состав комфортных слоев,
+                                                        обеспечивает оптимальную жесткость матраса, благодаря чему он подойдет
+                                                        для большинства людей. 5 зон поддержки в пружинном блоке улучшают
+                                                        анатомические свойства матраса, делают его более удобным для сна на боку.
+                                                        Зоны комфорта симметрично расположены по отношению к центру матраса,
+                                                        что производит максимальный поддерживающий эффект для более тяжелых
+                                                        частей тела. Пышный и приятный на ощупь чехол придает дополнительный комфорт матрасу.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 80 х 23 х 180 см</p>
+                                                    <p class="lead">Высота - 23 см</p>
+                                                    <p class="lead">Наполнитель - короб из ППУ по периметру, ППУ, войлок, независимый пружинный блок , войлок</p>
+                                                    <p class="lead">Гарантия - 18 месяцев</p>
+
+                                                </div>
+                                                <div id="myCarousel8" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel8" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel8" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/matras/Medium.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/matras/Medium2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel8" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel8" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/matras/Comfort.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p class="card-text">Матрас Комфорт</p>
+                            <h6>Цена 23549 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#comfort">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="comfort" tabindex="-1" aria-labelledby="comfort" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Матрас Комфорт
+                                            <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead"> Матрас "Комфорт" – пружинный матрас средней жесткости
+                                                        на основе семизональной пружинной системы Curem Dynamic System. Трикотаж
+                                                        с волокнами в составе системы комфортностиматраса сохраняет и
+                                                        преобразует выделяемое телом человека тепло, способствует поддержанию
+                                                        комфортной температуры тела, благодаря чему организм тратит на 30% меньше
+                                                        энергии. Уникальные свойства волокна и его ярко выраженный антибактериальный
+                                                        эффект с успехом используются в медицине для оздоровления организма и
+                                                        комплексной терапии многих заболеваний.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 80 х 24 х 200 см</p>
+                                                    <p class="lead">Высота - 24 см</p>
+                                                    <p class="lead">Наполнитель - пена Carbon Foam, кокосовое полотно, ППУ короб</p>
+                                                    <p class="lead">Гарантия - 18 месяцев</p>
+                                                </div>
+                                                <div id="myCarousel9" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel9" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel9" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/matras/Comfort.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/matras/Comfort2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel9" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel9" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+            </span>
+
+            <hr class="featurette-divider">
+
+        </div>
+    </div>
+    </section>
+</main>
+
+<footer th:insert="/blocks/footer :: foot"></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="scriptFilter.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        $("#search").keyup(function () {
+
+            var filter = $(this).val(),
+                count = 0;
+
+            $('#cards span').each(function () {
+
+                if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                    $(this).hide();
+
+                } else {
+                    $(this).show('');
+                    count++;
+                }
+            });
+        });
+    }
+</script>
+</body>
+</html>

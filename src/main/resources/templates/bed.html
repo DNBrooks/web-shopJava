@@ -1,0 +1,988 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Кровати</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="/blocks/header :: head"></header>
+
+<main>
+    <section id="cards">
+    <div class="container">
+        <h1 class="text text-center">Кровати</h1>
+    </div>
+
+    <div class="album">
+        <div class="container">
+
+            <hr class="featurette-divider">
+
+            <span class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-4">
+
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img  th:src="@{../image/bed/Gamma.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                        <div class="card-body">
+                            <h6 class="text-danger">НОВИНКА</h6>
+                            <p class="card-text">Кровать Гамма</p>
+                            <h6>Цена 35999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#gamma">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="gamma" tabindex="-1" aria-labelledby="gamma" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Кровать Гамма
+                                            <h2 class="text-danger">НОВИНКА</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Кровать "Гамма" отличается выразительным дизайном,
+                                                        который делает ее центральным элементом в спальне. Сочетание черной
+                                                        искусственной кожи и темного основания придают этому элементу обстановки
+                                                        массивность и значительность, характерные для классических интерьеров.
+                                                        Широкие спальные места гарантируют полноценный отдых в ночное время.
+                                                        Матрас и подушки в комплект не входят.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 167х92,4х208 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, экокожа</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+
+                                                </div>
+                                                <div id="myCarousel" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel" data-bs-interval="2000">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start" >
+                                                            <img th:src="@{../image/bed/Gamma.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start" >
+                                                            <img th:src="@{../image/bed/Gamma2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img  th:src="@{../image/bed/Roza.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                        <div class="card-body">
+                            <h6 class="text-danger">НОВИНКА</h6>
+                            <p class="card-text">Кровать Роза</p>
+                            <h6>Цена 28999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#roza">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="roza" tabindex="-1" aria-labelledby="roza" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Кровать Роза
+                                            <h2 class="text-danger">НОВИНКА</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Крепкая, устойчивая и удобная кровать — основной элемент
+                                                        спального гарнитура "Роза", выполненного в натуральных светлых тонах.
+                                                        Она оснащена ровной спинкой, декорированной фрезерованными планками.
+                                                        Выпуклые вставки из экокожи придают дизайну изголовья особую элегантность,
+                                                        мягкий упругий наполнитель обеспечивает комфорт во время сна и чтения.
+                                                        Экологически безопасные материалы, из которых изготовлена кровать, не
+                                                        вызывают аллергии. Матрас и подушки в комплект не входят.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 96,5х93,5х208,5 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, МДФ,экокожа</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+
+                                                </div>
+                                                <div id="myCarousel2" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel" data-bs-interval="2000">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/bed/Roza.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/bed/Roza2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel2" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel2" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/bed/Ambas.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6 class="text-danger">АКЦИЯ</h6>
+                            <p class="card-text">Кровать Амбассадор</p>
+                            <h6>Цена <s>20999 ₽</s>/18499 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#ambas">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="ambas" tabindex="-1" aria-labelledby="ambas" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Кровать Амбассадор
+                                            <h2 class="text-danger">АКЦИЯ</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Кровать "Амбассадор" без подъемного механизма не предназначена
+                                                        для хранения большого объема вещей, зато вполне способна обеспечить потребность
+                                                        в комфорте во время сна. Хотя модель не оснащена подкроватным ящиком, внутри
+                                                        ее спинки достаточно места для дополнительного одеяла или сменного комплекта
+                                                        постельного белья. Опоры смещены к центру относительно боковых
+                                                        царг, что позволяет избежать ушибов пальцев ног. Матрас и подушки в комплект не входят. </p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 168,2х99,6х228,6 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, пластмасса</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+
+                                                </div>
+                                                <div id="myCarousel3" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel" data-bs-interval="2000">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel3" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel3" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/bed/Ambas.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/bed/Ambas2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel3" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel3" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/bed/Indi.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail">
+
+                        <div class="card-body">
+                            <h6 class="text-danger">АКЦИЯ</h6>
+                            <p class="card-text">Кровать Инди</p>
+                            <h6>Цена <s>19999 ₽</s>/15499 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#indi">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="indi" tabindex="-1" aria-labelledby="indi" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Кровать Инди
+                                            <h2 class="text-danger">АКЦИЯ</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Кровать без подъемного механизма "Инди" — удобная мебель
+                                                        для сна в модном минималистском стиле. Она идеально подойдет и для
+                                                        спальни взрослых, и для детской комнаты. Благодаря конструкции кровать
+                                                        выглядит легкой и не загромождает пространство, а высокие ножки облегчают
+                                                        уборку. Модель с удобным высоким изголовьем изготовлена из металла и отличается
+                                                        высокой прочностью. Реечное основание обеспечивает ортопедический
+                                                        эффект. Матрас и подушки в комплект не входят.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 143х91х206 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, металл</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+
+                                                </div>
+                                                <div id="myCarousel4" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel" data-bs-interval="2000">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel4" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel4" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/bed/Indi.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/bed/Indi2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel4" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel4" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/bed/Furia.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2021</h6>
+                            <p class="card-text">Кровать Фурия</p>
+                            <h6>Цена 35749 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#furia">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="furia" tabindex="-1" aria-labelledby="furia" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Кровать Фурия
+                                            <h2 class="text-danger">Коллекция 2021</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Кровать "Фурия" - это сочетание надежности и современного
+                                                        стиля. Обивка кровати выполнена из прочной износостойкой ткани с ярко выраженной
+                                                        фактурой. Вы по достоинству оцените большой выбор цветовых решений, а также
+                                                        практичность и красоту ткани. Нестандартная геометрическая стяжка придает
+                                                        кровати выразительность. Кровать оснащена подъемным механизмом с
+                                                        вместительными ящиками для хранения, позволяя экономить пространство
+                                                        вокруг. Матрас и подушки в комплект не входят.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 150х105х215 см</p>
+                                                    <p class="lead">Материал изготовления - ДСП, рогожка</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+
+                                                </div>
+                                                <div id="myCarousel5" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel" data-bs-interval="2000">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel5" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel5" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/bed/Furia.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/bed/Furia2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel5" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel5" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/bed/Drim.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p class="card-text">Кровать Дриман</p>
+                            <h6>Цена 15999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#drim">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="drim" tabindex="-1" aria-labelledby="drim" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Кровать Дриман
+                                            <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Кровать с подъёмным механизмом "Дриман" – отличное решение
+                                                        для организации комфортного спального места для подростка или взрослого
+                                                        человека. Высокая боковая спинка позволит комфортно расположиться сидя,
+                                                        исключит прикосновение к холодной стене и защитит настенное покрытие от истирания.
+                                                        Кровать оборудована ортопедическим реечным основанием, под которым обустроен
+                                                        объемный ящик. Матрас и подушки в комплект не входят.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 110х70х210 см</p>
+                                                    <p class="lead">Материал изготовления - ДСП, рогожка</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+
+                                                </div>
+                                                <div id="myCarousel6" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel" data-bs-interval="2000">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel6" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel6" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/bed/Drim.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/bed/Drim2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel6" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel6" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/bed/Monitan.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2020</h6>
+                            <p class="card-text">Кровать Монитан</p>
+                            <h6>Цена 17499 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#monitan">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="monitan" tabindex="-1" aria-labelledby="monitan" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Кровать Монитан
+                                            <h2 class="text-danger">Коллекция 2020</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Кровать "Монитан"- отличный вариант для ценителей минимализма.
+                                                        Она прекрасно впишется в любой интерьер и будет хорошо смотреться в гостиной
+                                                        или в зале традиционной квартиры. Кровать не ломается и не деформируется даже
+                                                        при интенсивной эксплуатации. Кровать можно разобрать, переместить и снова
+                                                        собрать много раз, без потери товарного вида. Матрас и подушки в комплект не входят.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 121х70х191 см</p>
+                                                    <p class="lead">Материал изготовления - ДСП, металл</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+
+                                                </div>
+                                                <div id="myCarousel7" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel" data-bs-interval="2000">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel7" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel7" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/bed/Monitan.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/bed/Monitan2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel7" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel7" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/bed/Sorento.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2019</h6>
+                            <p class="card-text">Кровать Соренто</p>
+                            <h6>Цена 30999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#sorento">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="sorento" tabindex="-1" aria-labelledby="sorento" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Кровать Соренто
+                                            <h2 class="text-danger">Коллекция 2019</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Кровать "Соренто" с современным минималистичным дизайном
+                                                        идеально подойдет для лофта и интерьеров в индустриальном стиле. Модель
+                                                        кажется невесомой благодаря высоким стройным ножкам и ажурной спинке,
+                                                        поэтому будет отлично смотреться в небольших помещениях, позволив
+                                                        разгрузить пространство. Визуальная легкость сочетается с высокой прочностью:
+                                                        все элементы кровати выполнены из металла с матовым текстурированным покрытием.
+                                                        Такое изделие неподвластно течению времени и послужит не одному поколению.
+                                                        Матрас и подушки в комплект не входят.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 125х96х206 см</p>
+                                                    <p class="lead">Материал изготовления - металл</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+
+                                                </div>
+                                                <div id="myCarousel8" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel" data-bs-interval="2000">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel8" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel8" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/bed/Sorento.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/bed/Sorento2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel8" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel8" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/bed/Karel.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2019</h6>
+                            <p class="card-text">Кровать Карэл</p>
+                            <h6>Цена 48999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#karel">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="karel" tabindex="-1" aria-labelledby="karel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Кровать Карэл
+                                            <h2 class="text-danger">Коллекция 2019</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Кровать "Карэл" создаст условия для полноценного отдыха и
+                                                        восстановления сил. Помимо этого, в конструкции реализована функция хранения
+                                                        постельных принадлежностей: механизм подъема рамы с газлифтами обеспечивает
+                                                        легкий доступ к просторному бельевому ящику. Мягкое высокое изголовье
+                                                        располагает к приятному чтению перед сном. В дизайне основной акцент сделан
+                                                        на выразительной фактуре обивки и утяжках на фронтальной царге и спинке,
+                                                        выполненных с использованием декоративных пуговиц. Матрас и подушки в комплект не входят.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 150х100х211 см</p>
+                                                    <p class="lead">Материал изготовления - ДСП, велюр</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+
+                                                </div>
+                                                <div id="myCarousel9" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel" data-bs-interval="2000">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel9" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel9" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/bed/Karel.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/bed/Karel2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel9" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel9" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/bed/Agata.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2019</h6>
+                            <p class="card-text">Кровать Агата</p>
+                            <h6>Цена 22999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#agata">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="agata" tabindex="-1" aria-labelledby="agata" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Кровать Агата
+                                            <h2 class="text-danger">Коллекция 2019</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Просторная удобная кровать — основной элемент модульной
+                                                        коллекции для спальни. Благородный классический силуэт модели, подчеркнутый
+                                                        эффектной отделкой, создаст в комнате комфортную и уютную атмосферу. Ее
+                                                        фасад представляет собой фактурный рамочный профиль, изготовленный в
+                                                        цвете Дуб бодега. Мягкая накладка на изголовье выполнена из простеганной
+                                                        рельефной экокожи. Матрас и подушки в комплект не входят.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 175,2 х 105,5 х 207,2 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, кожа, пластмасса</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+
+                                                </div>
+                                                <div id="myCarousel10" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel" data-bs-interval="2000">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel10" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel10" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/bed/Agata.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/bed/Agata2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel10" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel10" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/bed/Charli.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2019</h6>
+                            <p class="card-text">Кровать Чарли</p>
+                            <h6>Цена 16999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#charli">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="charli" tabindex="-1" aria-labelledby="carli" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Кровать Чарли
+                                            <h2 class="text-danger">Коллекция 2019</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Одноярусная кровать "Чарли" предназначена для детей школьного возраста 
+                                                        и подростков. Особенность модели – наличие заднего бортика: он предотвращает 
+                                                        контакт с холодной стеной и одновременно защищает настенное покрытие 
+                                                        от истирания. Мебель этой серии производится из экологически чистого 
+                                                        материала – массива сосны. Матрас и подушки в комплект не входят.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 202 х 68 х 92 см</p>
+                                                    <p class="lead">Материал изготовления - массив сосны</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+
+                                                </div>
+                                                <div id="myCarousel11" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel" data-bs-interval="2000">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel11" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel11" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/bed/Charli.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/bed/Charli2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel11" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel11" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+
+                <span class="col">
+                    <span class="card shadow-sm">
+                        <img th:src="@{../image/bed/Hadson.png}" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" >
+
+                        <div class="card-body">
+                            <h6>Коллекция 2019</h6>
+                            <p class="card-text">Кровать Хадсон</p>
+                            <h6>Цена 13999 ₽</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#hadson">Предпросмотр</button>
+                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="hadson" tabindex="-1" aria-labelledby="hadson" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content rounded-5 shadow">
+                                    <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                        <h2 class="fw-bold mb-0 text-secondary">Кровать Хадсон
+                                            <h2 class="text-danger">Коллекция 2019</h2>
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body p-5 pt-0 ">
+                                        <form class="">
+                                            <div class="row featurette">
+                                                <div class="col-md-7">
+                                                    <h2 class="featurette-heading">Описание товара</h2>
+                                                    <p class="lead">Кровать "Хадсон" станет комфортным и просторным спальным
+                                                        местом для ребенка на долгие годы – от младшего до подросткового возраста.
+                                                        Благодаря светлому цвету корпуса и изголовья, модель будет выгодно смотреться в
+                                                        небольших спальнях, не загромождая пространство визуально. Реечное
+                                                        основание сделано из прочных ламелей ортопедической формы, обеспечивающих
+                                                        правильное поддержку тела во время сна. Матрас и подушки в комплект не входят.</p>
+                                                    <h2 class="featurette-heading">Характеристики</h2>
+                                                    <p class="lead">Размер - 124,8 х 92,5 х 214 см</p>
+                                                    <p class="lead">Материал изготовления - ЛДСП, поролон, велюр</p>
+                                                    <p class="lead">Гарантия - 24 месяца</p>
+
+                                                </div>
+                                                <div id="myCarousel12" class="carousel carousel-dark slide col-md-5" data-bs-ride="carousel" data-bs-interval="2000">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#myCarousel12" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#myCarousel12" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+
+                                                    </div>
+                                                    <div class="carousel-inner col-md-5">
+                                                        <div class="carousel-item active carousel-item-start">
+                                                            <img th:src="@{../image/bed/Hadson.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+                                                        <div class="carousel-item carousel-item-next carousel-item-start">
+                                                            <img th:src="@{../image/bed/Hadson2.png}" width="100%" height="400" role="img" aria-label="Placeholder: Thumbnail">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel12" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel12" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+                                                <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </span>
+                </span>
+            </span>
+
+            <hr class="featurette-divider">
+
+        </div>
+    </div>
+    </section>
+</main>
+
+<footer th:insert="/blocks/footer :: foot"></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript">
+    window.onload = function () {
+        $("#search").keyup(function () {
+
+            var filter = $(this).val(),
+                count = 0;
+
+            $('#cards span').each(function () {
+
+                if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                    $(this).hide();
+
+                } else {
+                    $(this).show('');
+                    count++;
+                }
+            });
+        });
+    }
+</script>
+</body>
+</html>

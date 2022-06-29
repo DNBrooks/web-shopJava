@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Комплекты</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+<header th:insert="/blocks/header :: head"></header>
+
+<main>
+    <section id="cards">
+        <div class="container">
+            <h1 class="text text-center">Комплекты</h1>
+        </div>
+        <div class="album">
+            <div class="container">
+
+                <hr class="featurette-divider">
+
+                <span class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-4">
+                    <span class="col">
+                        <span class="card shadow-sm">
+                            <img  th:src="@{../image/komplect/Toskana.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                            <div class="card-body">
+                                <h6>Коллекция 2021</h6>
+                                <p>Комплект Тоскана</p>
+                                <h6>Цена 10999 ₽</h6>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#toscana">Предпросмотр</button>
+                                        <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="toscana" tabindex="-1" aria-labelledby="toscana" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                    <div class="modal-content rounded-5 shadow">
+                                        <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                            <h2 class="fw-bold mb-0 text-secondary">Комплект Тоскана
+                                                <h2 class="text-danger">Коллекция 2021</h2>
+                                            </h2>
+                                        </div>
+                                        <div class="modal-body p-5 pt-0 ">
+                                            <form class="">
+                                                <div class="row featurette">
+                                                    <div class="col-md-7">
+                                                        <h2 class="featurette-heading">Описание товара</h2>
+                                                        <p class="lead">Набор садовой мебели "Тоскана" – отличное решение для создания
+                                                            уютной зоны отдыха на дачном участке, на террасе или балконе. Комплект состоит
+                                                            из столика и двух стульев. Все предметы мебели легко складываются, что
+                                                            позволяет брать их с собой в путешествие на автомобиле. Для хранения стола и
+                                                            стульев не требуется много места. Мебель имеет прочный стальной каркас. </p>
+                                                        <h2 class="featurette-heading">Характеристики</h2>
+                                                        <p class="lead">Цвет - черный</p>
+                                                        <p class="lead">Материал изготовления - сталь, пластмасса</p>
+                                                        <p class="lead">Гарантия - 24 месяца</p>
+                                                    </div>
+                                                    <div class=" col-md-5">
+                                                        <img  th:src="@{../image/komplect/Toskana.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                    </div>
+                                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                    <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </span>
+                    </span>
+
+                    <span class="col">
+                        <span class="card shadow-sm">
+                            <img  th:src="@{../image/komplect/Rio.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                            <div class="card-body">
+                                <h6>Коллекция 2021</h6>
+                                <p>Комплект Рио</p>
+                                <h6>Цена 19999 ₽</h6>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#rio">Предпросмотр</button>
+                                        <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="rio" tabindex="-1" aria-labelledby="rio" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                    <div class="modal-content rounded-5 shadow">
+                                        <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                            <h2 class="fw-bold mb-0 text-secondary">Комплект Рио
+                                                <h2 class="text-danger">Коллекция 2021</h2>
+                                            </h2>
+                                        </div>
+                                        <div class="modal-body p-5 pt-0 ">
+                                            <form class="">
+                                                <div class="row featurette">
+                                                    <div class="col-md-7">
+                                                        <h2 class="featurette-heading">Описание товара</h2>
+                                                        <p class="lead">Набор мебели "Рио" – отличное решение для создания
+                                                            уютной зоны отдыха на дачном участке, на террасе или балконе. Комплект состоит
+                                                            из столика с закаленным стеклом, скамьи и двух стульев. Мебель имеет прочный стальной каркас. </p>
+                                                        <h2 class="featurette-heading">Характеристики</h2>
+                                                        <p class="lead">Цвет - бежевый, серый</p>
+                                                        <p class="lead">Материал изготовления - сталь, текстилен, закалённое матовое стекло</p>
+                                                        <p class="lead">Гарантия - 24 месяца</p>
+                                                    </div>
+                                                    <div class=" col-md-5">
+                                                        <img  th:src="@{../image/komplect/Rio.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                    </div>
+                                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                    <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </span>
+                    </span>
+
+                    <span class="col">
+                        <span class="card shadow-sm">
+                            <img  th:src="@{../image/komplect/Toledo.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                            <div class="card-body">
+                                <h6>Коллекция 2021</h6>
+                                <p>Комплект Толедо</p>
+                                <h6>Цена 19999 ₽</h6>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#toledo">Предпросмотр</button>
+                                        <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="toledo" tabindex="-1" aria-labelledby="toledo" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                    <div class="modal-content rounded-5 shadow">
+                                        <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                            <h2 class="fw-bold mb-0 text-secondary">Комплект Толедо
+                                                <h2 class="text-danger">Коллекция 2021</h2>
+                                            </h2>
+                                        </div>
+                                        <div class="modal-body p-5 pt-0 ">
+                                            <form class="">
+                                                <div class="row featurette">
+                                                    <div class="col-md-7">
+                                                        <h2 class="featurette-heading">Описание товара</h2>
+                                                        <p class="lead">Набор садовой мебели "Толедо" – отличное решение для создания
+                                                            уютной зоны отдыха на дачном участке, на террасе или балконе. Комплект состоит
+                                                            из столика и двух стульев. Все предметы мебели легко складываются, что
+                                                            позволяет брать их с собой в путешествие на автомобиле. Для хранения стола и
+                                                            стульев не требуется много места. Мебель имеет прочный стальной каркас. </p>
+                                                        <h2 class="featurette-heading">Характеристики</h2>
+                                                        <p class="lead">Цвет - серый</p>
+                                                        <p class="lead">Материал изготовления - сталь</p>
+                                                        <p class="lead">Гарантия - 24 месяца</p>
+                                                    </div>
+                                                    <div class=" col-md-5">
+                                                        <img  th:src="@{../image/komplect/Toledo.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                    </div>
+                                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                    <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </span>
+                    </span>
+
+                    <span class="col">
+                        <span class="card shadow-sm">
+                            <img  th:src="@{../image/komplect/Brunch.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                            <div class="card-body">
+                                <h6>Коллекция 2021</h6>
+                                <p>Комплект Бранч</p>
+                                <h6>Цена 19999 ₽</h6>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#brunch">Предпросмотр</button>
+                                        <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="brunch" tabindex="-1" aria-labelledby="brunch" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                    <div class="modal-content rounded-5 shadow">
+                                        <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                            <h2 class="fw-bold mb-0 text-secondary">Комплект Бранч
+                                                <h2 class="text-danger">Коллекция 2021</h2>
+                                            </h2>
+                                        </div>
+                                        <div class="modal-body p-5 pt-0 ">
+                                            <form class="">
+                                                <div class="row featurette">
+                                                    <div class="col-md-7">
+                                                        <h2 class="featurette-heading">Описание товара</h2>
+                                                        <p class="lead">Набор садовой мебели "Бранч" – отличное решение для создания
+                                                            уютной зоны отдыха на дачном участке, на террасе или балконе. Комплект состоит
+                                                            из столика и двух стульев. Все предметы мебели легко складываются, что
+                                                            позволяет брать их с собой в путешествие на автомобиле. Для хранения стола и
+                                                            стульев не требуется много места. Мебель имеет прочный стальной каркас. </p>
+                                                        <h2 class="featurette-heading">Характеристики</h2>
+                                                        <p class="lead">Цвет - белый</p>
+                                                        <p class="lead">Материал изготовления - сталь</p>
+                                                        <p class="lead">Гарантия - 24 месяца</p>
+                                                    </div>
+                                                    <div class=" col-md-5">
+                                                        <img  th:src="@{../image/komplect/Brunch.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                    </div>
+                                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                    <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </span>
+                    </span>
+
+                    <span class="col">
+                        <span class="card shadow-sm">
+                            <img  th:src="@{../image/komplect/Nairobi.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                            <div class="card-body">
+                                <h6>Коллекция 2021</h6>
+                                <p>Комплект Наироби</p>
+                                <h6>Цена 28999 ₽</h6>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#nairobi">Предпросмотр</button>
+                                        <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="nairobi" tabindex="-1" aria-labelledby="nairobi" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                    <div class="modal-content rounded-5 shadow">
+                                        <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                            <h2 class="fw-bold mb-0 text-secondary">Комплект Наироби
+                                                <h2 class="text-danger">Коллекция 2021</h2>
+                                            </h2>
+                                        </div>
+                                        <div class="modal-body p-5 pt-0 ">
+                                            <form class="">
+                                                <div class="row featurette">
+                                                    <div class="col-md-7">
+                                                        <h2 class="featurette-heading">Описание товара</h2>
+                                                        <p class="lead">Набор мебели "Наироби" – отличное решение для создания
+                                                            уютной зоны отдыха на дачном участке, на террасе или кухне. Комплект состоит
+                                                            из столика с керамической столешницей и четырех стульев. Мебель имеет прочный стальной каркас. </p>
+                                                        <h2 class="featurette-heading">Характеристики</h2>
+                                                        <p class="lead">Цвет - белый, серый</p>
+                                                        <p class="lead">Материал изготовления - сталь, керамика</p>
+                                                        <p class="lead">Гарантия - 24 месяца</p>
+                                                    </div>
+                                                    <div class=" col-md-5">
+                                                        <img  th:src="@{../image/komplect/Nairobi.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                    </div>
+                                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                    <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </span>
+                    </span>
+
+                    <span class="col">
+                        <span class="card shadow-sm">
+                            <img  th:src="@{../image/komplect/Julia.png}" width="100%" height="225"  role="img" aria-label="Placeholder: Thumbnail" >
+                            <div class="card-body">
+                                <h6>Коллекция 2021</h6>
+                                <p>Комплект Джулия</p>
+                                <h6>Цена 28999 ₽</h6>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#julia">Предпросмотр</button>
+                                        <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="btn btn-sm btn-outline-danger" onClick='location.href="/basket"' type="button">Купить</button></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="julia" tabindex="-1" aria-labelledby="julia" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                    <div class="modal-content rounded-5 shadow">
+                                        <div class="modal-header p-5 pb-4 border-bottom-0 bg-dark">
+                                            <h2 class="fw-bold mb-0 text-secondary">Комплект Джулия
+                                                <h2 class="text-danger">Коллекция 2021</h2>
+                                            </h2>
+                                        </div>
+                                        <div class="modal-body p-5 pt-0 ">
+                                            <form class="">
+                                                <div class="row featurette">
+                                                    <div class="col-md-7">
+                                                        <h2 class="featurette-heading">Описание товара</h2>
+                                                        <p class="lead">Набор мебели "Джулия" – отличное решение для создания
+                                                            уютной зоны отдыха на дачном участке, на террасе или кухне. Комплект состоит
+                                                            из столика со столешницей из закаленного стекла и шести стульев. Мебель имеет прочный стальной каркас. </p>
+                                                        <h2 class="featurette-heading">Характеристики</h2>
+                                                        <p class="lead">Цвет - белый</p>
+                                                        <p class="lead">Материал изготовления - сталь, искусственный рогант, стекло</p>
+                                                        <p class="lead">Гарантия - 24 месяца</p>
+                                                    </div>
+                                                    <div class=" col-md-5">
+                                                        <img  th:src="@{../image/komplect/Julia.png}" width="100%" height="100%"  role="img" aria-label="Placeholder: Thumbnail" >
+                                                    </div>
+                                                    <div sec:authorize="hasAnyAuthority('ADMIN', 'USER')"><button class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/basket"' type="button">Оформить заказ</button></div>
+                                                    <div sec:authorize="!isAuthenticated()"><button type="button" class="col-md-5 mx-auto d-grid btn btn-lg rounded-4 btn-outline-danger" onClick='location.href="/login"'>Войдите или зарегистрируйтесь</button></div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </span>
+                    </span>
+                </span>
+
+                <hr class="featurette-divider">
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer th:insert="/blocks/footer :: foot"></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="scriptFilter.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        $("#search").keyup(function () {
+
+            var filter = $(this).val(),
+                count = 0;
+
+            $('#cards span').each(function () {
+
+                if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                    $(this).hide();
+
+                } else {
+                    $(this).show('');
+                    count++;
+                }
+            });
+        });
+    }
+</script>
+</body>
+</html>
